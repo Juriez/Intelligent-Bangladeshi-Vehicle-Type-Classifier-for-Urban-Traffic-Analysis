@@ -2,8 +2,8 @@
 
 A deep learning-based multi-class image classifier for recognizing **10 native Bangladeshi vehicle types** commonly found in Dhaka's chaotic urban traffic. Built using the **Poribohon-BD** dataset, the project compares **transfer learning (ResNet18)** vs **custom CNN**, and **softmax classification** vs **SVM on extracted features**.
 
-![Dhaka Traffic Example](https://via.placeholder.com/800x300?text=Dhaka+Traffic+Scene)  
-*(Replace with a real screenshot or collage of Dhaka traffic / dataset samples)*
+<img width="640" height="359" alt="image" src="https://github.com/user-attachments/assets/df8a622c-b5fe-4804-812f-dc47a873b370" />
+
 
 ## Features & Highlights
 - Classifies 10 Bangladeshi vehicle types: bicycle, bike, bus, car, cng, easybike, leguna, rickshaw, truck, van
