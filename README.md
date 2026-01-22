@@ -9,7 +9,7 @@ This project rigorously compares transfer learning vs training from scratch, and
 
 # 🧠 Why This Project?
 Most vehicle classifiers are trained on Western datasets (cars, trucks, buses only).
-Dhaka traffic is fundamentally different — rickshaws, CNGs, legunas, easybikes dominate the roads.
+Dhaka traffic is fundamentally different - rickshaws, CNGs, legunas, easybikes dominate the roads.
 
 This project focuses on:
 
