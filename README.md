@@ -187,16 +187,6 @@ please consider starring ⭐ the repository.
   <b>Made with ❤️ in Dhaka 🇧🇩</b>
 </p>
 
-Final strategic note (off-README, but important):
-If you’re showcasing this for ML internships, research labs, or GitHub portfolio reviews, this README now:
 
-
-Signals problem ownership
-
-
-Demonstrates analytical rigor
-
-
-Reads like a serious applied ML study, not a tutorial clone
 
 
