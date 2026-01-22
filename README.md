@@ -10,7 +10,7 @@ This project rigorously compares transfer learning vs training from scratch, and
 🧠 Why This Project?
 
 Most vehicle classifiers are trained on Western datasets (cars, trucks, buses only).
-Dhaka traffic is fundamentally different — rickshaws, CNGs, legunas, easybikes dominate the roads.
+Dhaka traffic is fundamentally different- rickshaws, CNGs, legunas, easybikes dominate the roads.
 
 This project focuses on:
 
@@ -51,6 +51,7 @@ SVM on extracted deep features
 
 📊 Handles class imbalance, data augmentation
 
+
 🔍 Confusion matrix & macro-F1 analysis
 
 🧩 Clean, modular PyTorch + scikit-learn codebase
@@ -80,7 +81,7 @@ Rickshaw ↔ Van
 ⚠️ Known Limitation
 
 
-Rare classes (e.g., Bicycle) underperform due to severe imbalance
+Rare classes like Bicycle underperform due to severe imbalance
 
 
 
@@ -120,13 +121,15 @@ data/poribohon-bd/
 Get saved models and additional files:
 🔗 https://drive.google.com/drive/folders/1mbRH2XQK9ZfPgCg_3jr416xs7mM2ucJ1
 Place the .pth files in the project root:
-resnet_classifier.pth
+
+vehicle_classifier.pth(resnet18)
 custom_cnn_classifier.pth
 
 
 3️⃣ (Optional) Preprocess Dataset
 Preprocessing is handled automatically, but you may re-run manually:
 python preprocess.py
+
 
 
 4️⃣ Run Full Model Comparison (Recommended)
@@ -170,13 +173,13 @@ python main_comparison.py
 🙏 Acknowledgments
 
 
-Dataset: Poribohon-BD (Tabassum et al., Kaggle / Mendeley Data)
+Dataset: Poribohon-BD (Tabassum et al. Kaggle / Mendeley Data)
 
 
 Frameworks: PyTorch, scikit-learn
 
 
-Inspiration: Dhaka’s vibrant — and chaotic — streets 🚦
+Inspiration: Dhaka’s vibrant - and chaotic - streets 🚦
 
 
 
