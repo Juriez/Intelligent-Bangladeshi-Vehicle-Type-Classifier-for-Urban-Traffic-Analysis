@@ -1,4 +1,4 @@
-# Intelligent Bangladeshi Vehicle Type Classifier
+Markdown# Intelligent Bangladeshi Vehicle Type Classifier
 
 A deep learning-based multi-class image classifier for recognizing **10 native Bangladeshi vehicle types** commonly found in Dhaka's chaotic urban traffic. Built using the **Poribohon-BD** dataset, the project compares **transfer learning (ResNet18)** vs **custom CNN**, and **softmax classification** vs **SVM on extracted features**.
 
@@ -36,10 +36,12 @@ A deep learning-based multi-class image classifier for recognizing **10 native B
 
 ## Requirements
 
+Install dependencies:
+
 ```bash
 pip install -r requirements.txt
-
 Included packages:
+
 torch
 torchvision
 numpy
@@ -49,13 +51,46 @@ seaborn
 pillow
 pyyaml
 
-## How to Use
-
-Download dataset
-Kaggle: https://www.kaggle.com/datasets/hridoyyahmed/poribohon-bd
-Extract to data/poribohon-bd/
-Pre-trained models & dataset link (Google Drive)
+How to Use
+1. Download Dataset
+Download from Kaggle:
+https://www.kaggle.com/datasets/hridoyyahmed/poribohon-bd
+Extract the zip file to:
+data/poribohon-bd/
+2. Download Pre-trained Models & Additional Dataset Files
+Get the saved models (resnet_classifier.pth, custom_cnn_classifier.pth) and any extra dataset files:
 https://drive.google.com/drive/folders/1mbRH2XQK9ZfPgCg_3jr416xs7mM2ucJ1?usp=drive_link
-Preprocess dataset (optional – already handled in loaders)Bashpython preprocess.py
-Run full comparison (recommended)
-Loads saved models, extracts features, trains/evaluates SVM, shows comparisonsBashpython main_comparison.py
+Place the .pth files in the project root folder (same level as main_comparison.py).
+3. Preprocess Dataset (Optional)
+Preprocessing is already handled inside the data loaders, but if you want to verify or re-run manually:
+Bashpython preprocess.py
+4. Run Full Comparison (Recommended)
+This script does everything:
+
+Loads saved ResNet18 and Custom CNN models
+Extracts features from both
+Trains and evaluates SVM on both feature sets
+Prints detailed comparison tables, accuracies, and confusion matrices
+
+Bashpython main_comparison.py
+Future Work Ideas
+
+Class-weighted loss or SMOTE to handle imbalance
+RBF/non-linear SVM kernels
+Object detection (YOLO) for multi-vehicle scenes
+Real-time inference (OpenCV + Flask/Streamlit)
+Deployment on edge devices for traffic cameras
+
+Acknowledgments
+
+Dataset: Poribohon-BD (Tabassum et al., Mendeley Data / Kaggle)
+Built with PyTorch, scikit-learn, and inspiration from Dhaka's vibrant (and chaotic) streets
+
+Star ⭐ if this helps your research or studies!
+Made with ❤️ in Dhaka
+textThis version:
+- Keeps **Requirements** only for dependencies
+- Moves **How to Use** to its own major section
+- Gives each step its own numbered sub-heading (1., 2., 3., 4.)
+- Uses clear, numbered instructions for easy following
+- Looks clean and professional on GitHub
