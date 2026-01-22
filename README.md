@@ -1,96 +1,202 @@
-Markdown# Intelligent Bangladeshi Vehicle Type Classifier
+🚦 Intelligent Bangladeshi Vehicle Type Classifier 🇧🇩
 
-A deep learning-based multi-class image classifier for recognizing **10 native Bangladeshi vehicle types** commonly found in Dhaka's chaotic urban traffic. Built using the **Poribohon-BD** dataset, the project compares **transfer learning (ResNet18)** vs **custom CNN**, and **softmax classification** vs **SVM on extracted features**.
+A Deep Learning Study on Dhaka’s Real-World Traffic
 
-<img width="640" height="359" alt="Dhaka Traffic Scene" src="https://github.com/user-attachments/assets/df8a622c-b5fe-4804-812f-dc47a873b370" />
+A multi-class image classification system for recognizing 10 native Bangladeshi vehicle types, built on real traffic images from Dhaka.
+This project rigorously compares transfer learning vs training from scratch, and deep learning (Softmax) vs classical ML (SVM) on identical visual features.
 
-## Features & Highlights
+<p align="center"> <img src="https://github.com/user-attachments/assets/df8a622c-b5fe-4804-812f-dc47a873b370" width="640" alt="Dhaka Traffic Scene"> </p>
 
-- Classifies 10 Bangladeshi vehicle types: bicycle, bike, bus, car, cng, easybike, leguna, rickshaw, truck, van
-- Uses **Poribohon-BD** dataset (~9,058 real-world images)
-- Implements and compares:
-  - Pre-trained **ResNet18** (transfer learning) → **80% accuracy**
-  - Custom lightweight CNN (from scratch) → **69% accuracy**
-  - SVM classifier on features extracted from both models
-- Handles class imbalance, data augmentation, confusion matrix analysis
-- Modular code structure (PyTorch + scikit-learn)
+🧠 Why This Project?
 
-## Project Goals
+Most vehicle classifiers are trained on Western datasets (cars, trucks, buses only).
+Dhaka traffic is fundamentally different — rickshaws, CNGs, legunas, easybikes dominate the roads.
 
-- Build a culturally relevant vehicle classifier for Dhaka traffic
-- Demonstrate power of transfer learning vs training from scratch
-- Compare deep learning (softmax) vs classical ML (SVM) on same features
-- Provide foundation for future ITS applications in Bangladesh
+This project focuses on:
 
-## Results Summary (Test Set – 518 images)
+Cultural relevance
 
-| Model / Approach                        | Accuracy | Macro F1 | Notes                                      |
-|-----------------------------------------|----------|----------|--------------------------------------------|
-| ResNet18 + Softmax (transfer learning)  | 80%      | 0.70     | Best overall performance                   |
-| Custom CNN + Softmax (from scratch)     | 69%      | 0.59     | Noticeable drop without pre-training       |
-| SVM on ResNet18 features                | 55.02%   | 0.50     | Linear kernel underperformed vs softmax    |
-| SVM on Custom CNN features              | ~55–60%  | ~0.50    | Weak features → poor SVM performance       |
+Real-world complexity
 
-**Common confusions**: CNG ↔ easybike ↔ leguna, rickshaw ↔ van  
-**Rare classes** (like bicycle) consistently underperformed due to severe imbalance.
+Practical ML trade-offs
 
-## Requirements
+🚘 Vehicle Classes (10)
+Category
+Bicycle
+Bike
+Bus
+Car
+CNG
+Easybike
+Leguna
+Rickshaw
+Truck
+Van
 
-Install dependencies:
+Key Features & Highlights
 
-```bash
+📸 Poribohon-BD dataset (~9,058 real-world images)
+
+🧠 Model Architectures
+
+Pretrained ResNet18 (transfer learning)
+
+Custom lightweight CNN (trained from scratch)
+
+⚖️ Classifier Comparison
+
+Softmax (end-to-end deep learning)
+
+SVM on extracted deep features
+
+📊 Handles class imbalance, data augmentation
+
+🔍 Confusion matrix & macro-F1 analysis
+
+🧩 Clean, modular PyTorch + scikit-learn codebase
+
+Project Objectives
+
+Build a Bangladesh-specific vehicle classifier
+
+Quantify transfer learning gains
+
+Compare deep vs classical ML on the same representations
+
+Lay groundwork for Intelligent Transportation Systems (ITS) in Bangladesh
+
+📈 Results Summary
+Test Set: 518 Images
+Model / ApproachAccuracyMacro-F1Key InsightResNet18 + Softmax80%0.70Best overall performanceCustom CNN + Softmax69%0.59Clear penalty without pretrainingSVM on ResNet18 features55.02%0.50Linear SVM failed to exploit featuresSVM on Custom CNN features~55–60%~0.50Weak features → weak SVM
+🔍 Common Confusions
+
+
+CNG ↔ Easybike ↔ Leguna
+
+
+Rickshaw ↔ Van
+
+
+⚠️ Known Limitation
+
+
+Rare classes (e.g., Bicycle) underperform due to severe imbalance
+
+
+
+🧩 Tech Stack
+
+
+PyTorch – deep learning
+
+
+Torchvision – pretrained models
+
+
+scikit-learn – SVM & metrics
+
+
+Matplotlib / Seaborn – visualization
+
+
+NumPy, Pillow, PyYAML
+
+
+
+📦 Requirements
+Install all dependencies:
 pip install -r requirements.txt
-Included packages:
 
-torch
-torchvision
-numpy
-matplotlib
-scikit-learn
-seaborn
-pillow
-pyyaml
 
-How to Use
-1. Download Dataset
-Download from Kaggle:
-https://www.kaggle.com/datasets/hridoyyahmed/poribohon-bd
-Extract the zip file to:
+▶️ How to Use
+1️⃣ Download the Dataset
+From Kaggle:
+🔗 https://www.kaggle.com/datasets/hridoyyahmed/poribohon-bd
+Extract to:
 data/poribohon-bd/
-2. Download Pre-trained Models & Additional Dataset Files
-Get the saved models (resnet_classifier.pth, custom_cnn_classifier.pth) and any extra dataset files:
-https://drive.google.com/drive/folders/1mbRH2XQK9ZfPgCg_3jr416xs7mM2ucJ1?usp=drive_link
-Place the .pth files in the project root folder (same level as main_comparison.py).
-3. Preprocess Dataset (Optional)
-Preprocessing is already handled inside the data loaders, but if you want to verify or re-run manually:
-Bashpython preprocess.py
-4. Run Full Comparison (Recommended)
-This script does everything:
 
-Loads saved ResNet18 and Custom CNN models
-Extracts features from both
-Trains and evaluates SVM on both feature sets
-Prints detailed comparison tables, accuracies, and confusion matrices
 
-Bashpython main_comparison.py
-Future Work Ideas
+2️⃣ Download Pre-trained Models
+Get saved models and additional files:
+🔗 https://drive.google.com/drive/folders/1mbRH2XQK9ZfPgCg_3jr416xs7mM2ucJ1
+Place the .pth files in the project root:
+resnet_classifier.pth
+custom_cnn_classifier.pth
 
-Class-weighted loss or SMOTE to handle imbalance
-RBF/non-linear SVM kernels
-Object detection (YOLO) for multi-vehicle scenes
-Real-time inference (OpenCV + Flask/Streamlit)
-Deployment on edge devices for traffic cameras
 
-Acknowledgments
+3️⃣ (Optional) Preprocess Dataset
+Preprocessing is handled automatically, but you may re-run manually:
+python preprocess.py
 
-Dataset: Poribohon-BD (Tabassum et al., Mendeley Data / Kaggle)
-Built with PyTorch, scikit-learn, and inspiration from Dhaka's vibrant (and chaotic) streets
 
-Star ⭐ if this helps your research or studies!
-Made with ❤️ in Dhaka
-textThis version:
-- Keeps **Requirements** only for dependencies
-- Moves **How to Use** to its own major section
-- Gives each step its own numbered sub-heading (1., 2., 3., 4.)
-- Uses clear, numbered instructions for easy following
-- Looks clean and professional on GitHub
+4️⃣ Run Full Model Comparison (Recommended)
+This script:
+
+
+Loads both trained models
+
+
+Extracts features
+
+
+Trains & evaluates SVMs
+
+
+Prints metrics and confusion matrices
+
+
+python main_comparison.py
+
+
+🚀 Future Work
+
+
+⚖️ Class-weighted loss / SMOTE for imbalance
+
+
+🔁 Non-linear SVM kernels (RBF, Poly)
+
+
+🎯 Object detection (YOLO) for multi-vehicle scenes
+
+
+⏱️ Real-time inference (OpenCV + Flask / Streamlit)
+
+
+📡 Edge deployment for traffic cameras
+
+
+
+🙏 Acknowledgments
+
+
+Dataset: Poribohon-BD (Tabassum et al., Kaggle / Mendeley Data)
+
+
+Frameworks: PyTorch, scikit-learn
+
+
+Inspiration: Dhaka’s vibrant — and chaotic — streets 🚦
+
+
+
+⭐ Support
+If this project helped your research, coursework, or experimentation,
+please consider starring ⭐ the repository.
+<p align="center">
+  <b>Made with ❤️ in Dhaka 🇧🇩</b>
+</p>
+
+Final strategic note (off-README, but important):
+If you’re showcasing this for ML internships, research labs, or GitHub portfolio reviews, this README now:
+
+
+Signals problem ownership
+
+
+Demonstrates analytical rigor
+
+
+Reads like a serious applied ML study, not a tutorial clone
+
+
