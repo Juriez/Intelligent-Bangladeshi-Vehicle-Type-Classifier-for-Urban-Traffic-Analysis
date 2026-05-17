@@ -153,4 +153,4 @@ Inspiration: Dhaka’s vibrant - and chaotic - streets 🚦
 
 If this project helped your research, coursework, or experimentation,
 please consider starring ⭐ the repository.
-<p align="center"> <b>Made with ❤️ in Dhaka 🇧🇩</b> </p>
+
